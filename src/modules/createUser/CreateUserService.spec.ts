@@ -11,7 +11,7 @@ describe("Create user", () => {
     usersRepository = new UsersRepositoryInMemory();
     createUserService = new CreateUserService(usersRepository);
   });
-
+  // deve ser possivel criar um usuario
   it("should be able to create a new user", async () => {
     const userData: User = {
       name: "Test Name",
@@ -23,6 +23,8 @@ describe("Create user", () => {
 
     expect(user).toHaveProperty("id");
     expect(user.username).toBe("testusername");
+    console.log(user);
+    
   });
 
   it("should not be able to create an existing user", async () => {
